@@ -6,6 +6,7 @@ let btn = document.getElementById("f");
 let gif = document.getElementById("soundgif");
 let textii=document.getElementById("textii");
 let tog=document.getElementsByClassName("ha");
+let previousind=index;
 let songlist = Array.from(document.getElementsByClassName("list"));
 let song = [
     { name: "SO HIGH", filepath: "./songs/0.mp3", coverpath: "./covers/0.jpg" },
@@ -66,7 +67,6 @@ let makeallplays = () => {
 
     });
 }
-// done
 let subplaylist = Array.from(document.getElementsByClassName("hoverplay"));
 subplaylist.forEach((element) => {
     element.addEventListener("click", (e) => {
@@ -109,6 +109,10 @@ progressbar.addEventListener("change", () => {
 })
 
 document.getElementById("next").addEventListener("click", (e) => {
+    let gfg=document.getElementById(`${previousind}`);
+        // console.log(gg)
+        gfg.classList.add("hoverplay")
+        gfg.classList.remove("pauseplay")
     if (index == 11) {
         index = 0;
     }
@@ -119,21 +123,35 @@ document.getElementById("next").addEventListener("click", (e) => {
     audioelem.src = `./songs/${index}.mp3`;
     audioelem.currentTime = 0;
     audioelem.play();
+    let gg=document.getElementById(`${index}`);
+        // console.log(gg)
+        gg.classList.remove("hoverplay")
+        gg.classList.add("pauseplay")
+        previousind=index;
     btn.classList.add("pause");
     gif.style.opacity = 1;
     textii.innerHTML=song[index].name;
     btn.classList.remove("play");
 })
 document.getElementById("prev").addEventListener("click", (e) => {
+    let gfg=document.getElementById(`${previousind}`);
+        // console.log(gg)
+        gfg.classList.add("hoverplay")
+        gfg.classList.remove("pauseplay")
     if (index == 0) {
         index = 11;
     }
     else {
         index--;
     }
+    let gg=document.getElementById(`${index}`);
+        // console.log(gg)
+        gg.classList.remove("hoverplay")
+        gg.classList.add("pauseplay")
     audioelem.src = `./songs/${index}.mp3`;
     textii.innerHTML=song[index].name;
     audioelem.currentTime = 0;
+    previousind=index;
     audioelem.play();
     btn.classList.add("pause");
     gif.style.opacity = 1;
