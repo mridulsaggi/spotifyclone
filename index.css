@@ -144,12 +144,14 @@ body{
 }
 .control{
     display: flex;
+    padding: 2rem;
     align-items: center;
     justify-content: center;
     margin:2rem auto;
     border:.2rem solid white;
     border-radius: 2rem;
     width:80vw;
+    margin-top: 3rem;
     height: 8rem;
     /* margin-top: 5rem; */
 }
@@ -199,12 +201,6 @@ body{
     width: 100rem;
     cursor: pointer;
     margin-top: 2rem;
-}
-.control{
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
 }
 .icons{
     display: flex;
@@ -373,4 +369,3 @@ body{
         width:55rem;
     }
 }
-//done
