@@ -66,6 +66,7 @@ let makeallplays = () => {
 
     });
 }
+// done
 let subplaylist = Array.from(document.getElementsByClassName("hoverplay"));
 subplaylist.forEach((element) => {
     element.addEventListener("click", (e) => {
